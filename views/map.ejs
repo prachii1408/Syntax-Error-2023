@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="./mapStyle.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/4c18f48a30.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="floating-panel">
+    <div>
+        <div>
+            <i class="fa-regular fa-circle-dot"></i> <input type="text" id="from" placeholder="origin">
+        </div>
+    </div>
+    <div>
+        <div>
+            <i class="fa-solid fa-location-dot"></i> <input type="text" id="to" placeholder="destination">
+        </div>
+    </div>
+    <b>Mode Of Travel</b>
+    <select id="mode">
+        <option value="BICYCLING">Bicycling</option>
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="TRANSIT">Transit</option>
+    </select>
+</div>
+
+<div id="map">
+
+</div>
+</body>
+<script type="text/javascript" src="./maps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.MY_API %>&callback=initMap&libraries=places&v=weekly" async></script> 
+</html>

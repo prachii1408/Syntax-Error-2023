@@ -1,0 +1,48 @@
+
+    <%- include('partials/header') %>
+
+    <div class="contacts">
+       <span class="phone">+91 456789XXXX</span>
+       <span class="email"> medikit@gmail.com</span>
+       <span ><a class="signIn" href="/signIn">Sign In</a></span>
+       <span ><a class="signUp" href="/signUp">Sign Up</a></span>
+       <span ><a class="signOut" href="/signOut">Sign Out</a></span>
+    </div>
+    <div class="navbar">
+        <img src="Medkit3.png">
+        
+        <a class="home" href="/">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Blood Bank 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/donate" class="donate">Donate</a>
+              <a href="/search" class="search">Search Donor</a>
+            </div>
+          </div> 
+        <a class="stroke" href=" http://10.61.4.62:8501" target="_blank">Strokes Predictor</a>
+    </div>
+    <p>"Advancing the future of HealthCare</p>
+    <p class="head">here,today"</p>
+
+   
+   <% if(no==="on"){ %>
+    <div id="popup" >
+      <h3>Sorry,You are not eligible for blood donation</h3>
+     </div>
+   <% } else if(no===""&& age===0){ %>
+    <div id="popup" class="invisible">
+      <h3>Sorry,You are not eligible for blood donation</h3>
+     </div>
+   <% }else if( age<17 || age>64){ %>
+    <div id="popup" >
+      <h3>Sorry,You are not eligible for blood donation</h3>
+     </div>
+    <% }else{ %>
+    <div id="popup">
+      <h3>Congratulations,You are now eligible for blood donation</h3>
+     </div>
+    <% } %>
+    
+    <%- include('partials/footer') %>
